@@ -1,3 +1,3 @@
 import os
 os.system('clear')
-print("Hell welcom to team monaim")
+print("Hello welcome to team monaim")
