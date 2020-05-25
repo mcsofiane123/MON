@@ -1,8 +1,11 @@
 import os
-os.system('pip install V7xStyle')
+os.system('pip2 install V7xStyle')
 from V7xStyle import *
+import time
+import sys
 #############################
 os.system('clear')
+an=Animation
 def menu():
 
     s=Style("""###############################################
@@ -12,8 +15,7 @@ def menu():
 #Y#1-) G#install tools termux            W#         #
 ###############################################
 #Y#00-)G#Exit the tool                   W#         #
-###############################################
-""").Square(cols=2,Equal=True)
+###############################################""").Square(cols=2,Equal=True)
     print(s)
 
 loop = True
@@ -23,11 +25,14 @@ while loop:
     what = input("\033[1;32mMon#: ")
     
     if what == "1":
+        to10=[str(i+1)+'% ' for i in range(100)]
+        an.Loading(AT=to10,text='R#Wait Please..Y#',repeat=1,t=0.02)
         print("===================================")
         print("----------------")
         hm = input("presse y to continue (y/n): ")
         print("================================")
         if hm == "y":
+            an.Loading(text='Y#Loading.... R#')
             print("========================================================")
             print("[+] Please put down you android and go to the toilet...")
             print("Because this will take a long time.")
@@ -53,8 +58,7 @@ while loop:
             os.system("apr-get install figlet -y")
             os.system("apt-get install wget -y")
             os.system("apt-get install wget -y")
-            os.system("apt-get install python2 -y")
-            os.system("apt-get install python2 -dev -y")
+            os.system("apt-get install python2-dev -y")
             os.system("apt install wireshark -y")
             os.system("apt-get install cowsay -y")
             os.system("apt-get install toilet -y")
@@ -66,6 +70,7 @@ while loop:
             os.system("apt-get install unrar -y ")
             os.system("apt-get install clang -y")
             os.system("apt-get install openssh -y")
+            os.system("apt-get install openssl -y")
             os.system("apt-get install tor -y")
             os.system("apt-get install tar -y")
             os.system("apt-get install zip -y")
@@ -81,9 +86,11 @@ while loop:
             print("====================================")
             rmenu = input("[?] Back to Menu? (y/n): ")
             if rmenu == "y":
-                menu()
+                os.system('clear')
+                python = sys.executable
+                os.execl(python,python, * sys.argv)
             else:
                 break
     elif what == "00":
-        print("Bye.")
+        print("Bye...!")
         break
